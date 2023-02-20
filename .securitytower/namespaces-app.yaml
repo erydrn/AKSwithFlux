@@ -7,6 +7,6 @@ spec:
     - name: namespaces
       cluster:
         repository: https://github.com/securitytower/cluster-template.git
-        name: single-cluster
+        name: AKSwithFlux
       resources:
         path: cluster/global/namespace-specs
