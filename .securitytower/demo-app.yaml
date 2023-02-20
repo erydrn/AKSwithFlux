@@ -1,23 +1,22 @@
 apiVersion: securitytower.io/v1alpha1
 kind: Application
 metadata:
-  name: demo-app
+  name: vote-app
 spec:
-  applicationOwner: securitytower-demo
+  applicationOwner: erydrn
   securityLevel: internal
   stages:
-    - name: foo
+    - name: azure-vote-back
       cluster:
-        repository: https://github.com/securitytower/cluster-template.git
+        repository: https://github.com/erydrn/AKSwithFlux.git
         name: AKSwithFlux
       resources:
-        path: cluster/namespaces/foo
-      targetNamespace: foo
-    - name: bar
+        path: cluster/namespaces/azure-vote-back
+      previousStage: azure-vote-back
+    - name: azure-vote-front
       cluster:
-        repository: https://github.com/securitytower/cluster-template.git
+        repository: https://github.com/erydrn/AKSwithFlux.git
         name: AKSwithFlux
       resources:
-        path: cluster/namespaces/bar
-      targetNamespace: bar
-      previousStage: foo
+        path: cluster/namespaces/azure-vote-front
+      previousStage: azure-vote-front
