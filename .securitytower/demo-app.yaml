@@ -9,14 +9,14 @@ spec:
     - name: foo
       cluster:
         repository: https://github.com/securitytower/cluster-template.git
-        name: single-cluster
+        name: AKSwithFlux
       resources:
         path: cluster/namespaces/foo
       targetNamespace: foo
     - name: bar
       cluster:
         repository: https://github.com/securitytower/cluster-template.git
-        name: single-cluster
+        name: AKSwithFlux
       resources:
         path: cluster/namespaces/bar
       targetNamespace: bar
